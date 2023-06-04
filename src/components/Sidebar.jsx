@@ -1,6 +1,12 @@
 import React from 'react'
 import '../CSS/Sidebar.css'
+import { Link, useNavigate } from 'react-router-dom'
 const Sidebar = () => {
+  const navigate = useNavigate()
+  const logout = ()=> {
+    window.localStorage.clear()
+    navigate('/login')
+  }
   return (
     <div className='sidebar'>
         <div className="logo">
@@ -15,26 +21,26 @@ const Sidebar = () => {
         <div className="sidebar-menu">
           <ul className="sidebar-ul">
             <li>
-              <i className="bx bxs-dashboard"></i
-              ><a href="Dashboard.html">Dashboard</a>
+              <Link to="/dashboard"> <i className="bx bxs-dashboard"></i
+              ><span className='menuItems'>Dashboard</span> </Link>
             </li>
             <li>
-              <i className="bx bx-money-withdraw"></i
-              ><a href="Income.html">Income</a>
+              <Link to="/income"><i className="bx bx-money-withdraw"></i
+              > <span className='menuItems'>Income</span> </Link>
             </li>
             <li>
-              <i className="bx bx-credit-card"></i
-              ><a href="expense.html">Expense</a>
+              <Link to="/expense"><i className="bx bx-credit-card"></i
+              > <span className='menuItems'>Expense</span> </Link>
             </li>
             <li>
-              <i className="bx bxs-wallet"></i
-              ><a href="Transactions.html">Transactions</a>
+              <Link to="/transaction"><i className="bx bxs-wallet"></i
+              > <span className='menuItems'>Transactions</span> </Link>
             </li>
 
           </ul>
         </div>
         <div className='logout'>
-            <button><a href="">Logout</a></button>
+            <button onClick={logout}>Logout</button>
         </div>
     </div>
   )

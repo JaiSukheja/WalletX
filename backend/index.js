@@ -9,6 +9,7 @@ app.use(cors())
 
 app.use(express.urlencoded({extended:true})) // middleware jisse body dikhe
 app.use('/api/auth',require('./routes/auth'))
+app.use('/api/transaction',require('./routes/transaction'))
 main().catch(err => console.log(err));
 
 async function main() {

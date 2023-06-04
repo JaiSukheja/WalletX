@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 80%;
+    width: 83%;
     background-color: var(--second--bg-color);
     border-radius: 20px;
     padding: 0.5rem;
@@ -30,6 +30,7 @@
     flex: 1;
     border-radius: 20px;
     background-color: var(--second--bg-color);
+    justify-content: center;
     text-align: center;
     padding: 0.5rem;
     display: flex;
@@ -48,12 +49,19 @@
     border: 3px solid var(--second-color);
 }
 
-.tracker-item h2 {
+.tracker-item > h2 {
     font-size: 1.4rem;
     font-weight: 200;
+    margin: 0px;
 }
 
 .amount {
     font-weight: 800;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
+@media (max-width: 665px) {
+    .amount {
+        font-size: 1.2rem;
+    }
+}
+

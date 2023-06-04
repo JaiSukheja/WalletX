@@ -14,44 +14,52 @@ import Income from './components/Income'
 import Transaction from './components/Transactions'
 import AlertState from './context/StateFiles/AlertState'
 import LoginState from './context/StateFiles/LoginState'
-
+import './CSS/App.css'
+import ProfileState from "./context/StateFiles/ProfileState";
+import TransactionState from "./context/StateFiles/TransactionState";
 function App() {
 
 
   return (
 
     <>
-      {/* {console.log(mode)} */}
+
       <LoginState>
-
-        <AlertState>
-          <BrowserRouter>
-
-            <Routes>
-              <Route exact path="/" element={<Login />}>
-                {/* exact path instead of path is used to avoid partial matching of react */}
-              </Route>
-              <Route exact path="/signup" element={<Signup />}>
-                {/* exact path instead of path is used to avoid partial matching of react */}
-              </Route>
-              <Route exact path="/login" element={<Login />}>
-                {/* exact path instead of path is used to avoid partial matching of react */}
-              </Route>
-              <Route exact path="/dashboard" element={<Dashboard />}>
-                {/* exact path instead of path is used to avoid partial matching of react */}
-              </Route>
-              <Route exact path="/expence" element={<Expence />}>
-              </Route>
-              <Route exact path="/income" element={<Income />}>
-              </Route>
-              <Route exact path="/userplaylist" element={<Transaction />}>
-              </Route>
-
-            </Routes>
+        <ProfileState>
 
 
-          </BrowserRouter>
-        </AlertState>
+          <AlertState>
+            <TransactionState>
+              <BrowserRouter>
+
+                <Routes>
+                  <Route exact path="/" element={<Login />}>
+
+                  </Route>
+                  <Route exact path="/signup" element={<Signup />}>
+
+                  </Route>
+                  <Route exact path="/login" element={<Login />}>
+
+                  </Route>
+                  <Route exact path="/dashboard" element={<Dashboard />}>
+
+                  </Route>
+                  <Route exact path="/expense" element={<Expence />}>
+                  </Route>
+                  <Route exact path="/income" element={<Income />}>
+                  </Route>
+                  <Route exact path="/transaction" element={<Transaction />}>
+                  </Route>
+
+                </Routes>
+
+
+              </BrowserRouter>
+            </TransactionState>
+
+          </AlertState>
+        </ProfileState>
       </LoginState>
 
 

@@ -1,43 +1,81 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../CSS/Dashboard.css";
 import "../CSS/Expence.css";
+import Sidebar from './Sidebar'
+import ProfileContext from "../context/ContextFiles/ProfileContext";
+import TransactionContext from "../context/ContextFiles/TransactionContext";
 const Expence = () => {
+  const profileProps = useContext(ProfileContext)
+  const transactionProps = useContext(TransactionContext)
+  const addExpense = async(e) => {
+
+    e.preventDefault()
+    const ExpenceDescription = document.getElementById('expenceDescription')
+    const ExpenceAmount = document.getElementById('expenceAmount')
+    // console.log(ExpenceDescription,ExpenceAmount)
+    let expObj = {
+      description:ExpenceDescription.value,
+      amount:ExpenceAmount.value,
+      isIncome:false,
+      user:profileProps.User._id
+    }
+    console.log(expObj)
+    const response = await fetch('http://localhost:5000/api/transaction/addtransaction', {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify(expObj), // body data type must match "Content-Type" header
+    });
+    const data = await response.json()
+    console.log(data)
+    transactionProps.setTotalExpense(transactionProps.totalExpense+parseInt(ExpenceAmount.value))
+    transactionProps.setBalance(transactionProps.balance-parseInt(ExpenceAmount.value))
+    
+  }
+
   return (
+    <>
+    <div className="main" style={{display:"flex", width:"95%",height:"90%",position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",gap:"10px"}}>
+    <Sidebar/>
     <div className="Expence">
       <div class="content">
-        <h1>Expence</h1>
+        <h1>Expense</h1>
       </div>
       <div class="Expence-tracker">
         <div class="left">
           <div class="left-top">
             <div class="tracker-item">
-              <h2>Expence</h2>
-              <div class="amount">$ 1000</div>
+              <h2>Expense</h2>
+              <div class="amount">{transactionProps.totalExpense}</div>
             </div>
             <div class="tracker-item">
               <h2>Balance</h2>
-              <div class="amount">$ 1000</div>
+              <div class="amount">{transactionProps.balance}</div>
             </div>
           </div>
           <div class="left-bottom">
             <div class="add">
-              <h2>Add Expence</h2>
+              <h2>Add Expense</h2>
               <form id="Expence-form" action="">
                 <div class="form-control">
                   <input
                     type="text"
-                    id="Expence-input"
+                    id="expenceDescription"
                     placeholder="Expence Description"
                   />
 
                   <input
                     type="number"
-                    id="Expence-input"
-                    placeholder="Expence amount"
+                    id="expenceAmount"
+                    placeholder="Expence-Amount"
                   />
                 </div>
                 <div class="form-control">
-                  <button type="submit">Add Expence</button>
+                  <button type="submit" onClick={addExpense}>Add Expense</button>
                 </div>
               </form>
             </div>
@@ -65,6 +103,10 @@ const Expence = () => {
     </div>
       </div>
     </div>
+    </div>
+    
+    </>
+    
   );
 };
 
