@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* --third-color: #9bf9f4; */
+
+.app{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9bf9f4;
+}
+.main-content{
+  width: 80%;
+  height: 80%;
+  display: flex;
+  border-radius: 20px;
+  background-color: rgba(144, 238, 144, 0.163);
+  padding: 1rem;
+  gap: 1rem;
+}
