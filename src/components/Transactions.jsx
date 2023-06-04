@@ -47,7 +47,7 @@ const Transactions = () => {
         <div class="content">
           <h1>Transactions</h1>
         </div>
-        <table>
+        <table className='transactionTable'>
             <thead>
               <tr>
                 <th>Date</th>
@@ -59,7 +59,7 @@ const Transactions = () => {
               {
                 transactionProps.transactions.map((transaction,index) => {
                   return (
-                    <tr key={index}>
+                    <tr key={index} style={{color:transaction.isIncome?"green":"red"}}>
                       <td>{transaction.date.split('T')[0]}</td>
                       <td>{transaction.description}</td>
                       <td>{transaction.amount}</td>

@@ -35,6 +35,8 @@ const Income = () => {
     console.log(data)
     transactionProps.setTotalIncome(transactionProps.totalIncome+parseInt(IncomeAmount.value))
     transactionProps.setBalance(transactionProps.balance+parseInt(IncomeAmount.value))
+    transactionProps.fetchTransactions()
+
   }
   return (
     <>

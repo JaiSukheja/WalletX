@@ -34,7 +34,7 @@ const Expence = () => {
     console.log(data)
     transactionProps.setTotalExpense(transactionProps.totalExpense+parseInt(ExpenceAmount.value))
     transactionProps.setBalance(transactionProps.balance-parseInt(ExpenceAmount.value))
-    
+    transactionProps.fetchTransactions()
   }
 
   return (
