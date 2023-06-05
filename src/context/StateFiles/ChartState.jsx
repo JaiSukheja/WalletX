@@ -67,7 +67,7 @@ const ChartState = (props)=> {
   },[TransactionProps.expense])
   useEffect(()=> {
     setBalanceCharValues()
-  },[TransactionProps.transactions])
+  },[incomeChart,expenseChart])
     return (
         <ChartContext.Provider value={{incomeChart,setIncomeChart,expenseChart,setExpenseChart,balanceChart,setBalanceChart,setIncomeCharValues,setExpenseCharValues,setBalanceCharValues}}>
            
