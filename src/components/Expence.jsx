@@ -4,6 +4,7 @@ import "../CSS/Expence.css";
 import Sidebar from './Sidebar'
 import ProfileContext from "../context/ContextFiles/ProfileContext";
 import TransactionContext from "../context/ContextFiles/TransactionContext";
+import ExpenseChart from "./ExpenseChart";
 const Expence = () => {
   const profileProps = useContext(ProfileContext)
   const transactionProps = useContext(TransactionContext)
@@ -43,7 +44,7 @@ const Expence = () => {
     <Sidebar/>
     <div className="Expence">
       <div class="content">
-        <h1>Expense</h1>
+        <h2>Expense</h2>
       </div>
       <div class="Expence-tracker">
         <div class="left">
@@ -60,8 +61,8 @@ const Expence = () => {
           <div class="left-bottom">
             <div class="add">
               <h2>Add Expense</h2>
-              <form id="Expence-form" action="">
-                <div class="form-control">
+              
+                
                   <input
                     type="text"
                     id="expenceDescription"
@@ -73,24 +74,25 @@ const Expence = () => {
                     id="expenceAmount"
                     placeholder="Expence-Amount"
                   />
-                </div>
+                
                 <div class="form-control">
-                  <button type="submit" onClick={addExpense}>Add Expense</button>
+                  <button class="expenseSubmit"  type="submit" onClick={addExpense}>Add Expense</button>
                 </div>
-              </form>
+              
             </div>
           </div>
         </div>
         <div class="right">
-          {/* <div class="right-top">
+           <div class="right-top">
               <div class="activityGraph">
                   <h2>Activity Graph</h2>
                   <div>
-                      <canvas id="activityGraphChart"></canvas>
+                      {/* <canvas id="activityGraphChart"></canvas> */}
+                      <ExpenseChart/>
                   </div>
               </div>
           </div>
-          <div class="right-bottom">
+          {/* <div class="right-bottom">
               <div class="pieChart">
                   <h2>Monthly In Out</h2>
                   <canvas
@@ -99,7 +101,7 @@ const Expence = () => {
                   ></canvas>
                   <hr />
               </div>
-            </div> */}
+            </div>  */}
     </div>
       </div>
     </div>

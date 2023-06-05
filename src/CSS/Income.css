@@ -16,7 +16,7 @@
     /* background-color: black; */
   }
   .left {
-    flex: 0.75;
+    flex: 0.6;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -75,9 +75,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-content: space-around;
   }
-  .add h2 {
-    font-size: 1.8rem;
+  .add h3 {
+    font-size: 1.5rem;
     text-align: center;
   }
   .income-form {
@@ -88,6 +89,8 @@
   .form-control {
     display: flex;
     flex-direction: column;
+    background-color: none;
+    border: none;
   }
   .form-control label {
     font-size: 2rem;
@@ -114,4 +117,17 @@
   }
   #pieChartGraph {
     margin-top: 0px;
+  }
+  .incomeSubmit {
+    width: 110px !important;
+    font-size: 14px !important;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+  }
+  #incomeDescription {
+    height:30px
+  }
+  #incomeAmount {
+    height:30px
   }

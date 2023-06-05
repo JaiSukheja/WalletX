@@ -45,7 +45,7 @@ const Transactions = () => {
       <Sidebar/>
     <div className='transactions'>
         <div class="content">
-          <h1>Transactions</h1>
+          <h2>Transactions</h2>
         </div>
         <table className='transactionTable'>
             <thead>

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import '../CSS/Dashboard.css'
 import Sidebar from './Sidebar'
 import TransactionContext from '../context/ContextFiles/TransactionContext'
+import ActivityGraph from './ActivityGraph'
 const Dashboard = () => {
   const transactionProps = useContext(TransactionContext)
   return (
@@ -10,7 +11,7 @@ const Dashboard = () => {
     <Sidebar/>
     <div className='dashboard'>
         <div className="content">
-          <h1>Dashboard</h1>
+          <h2>Dashboard</h2>
         </div>
         <div className="tracker">
           <div className="tracker-item">
@@ -27,21 +28,21 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="charts">
-          {/* <div className="leftCharts">
+           <div className="leftCharts">
             <div className="activityGraph">
               <h2>Activity Graph</h2>
-              <div>
-                <canvas id="activityGraphChart"></canvas>
+              <div style={{width:"400px"}}>
+                <ActivityGraph/>
               </div>
             </div>
-            <div className="distribution">
+            {/* <div className="distribution">
               <h2>Expence</h2>
               <div>
                 <canvas id="distributionChart"></canvas>
               </div>
-            </div>
+            </div> */}
           </div>
-          <div className="rightCharts">
+          {/* <div className="rightCharts">
             <div className="pieChart">
               <h2>Monthly In Out</h2>
               <canvas
@@ -50,7 +51,7 @@ const Dashboard = () => {
               ></canvas>
               <hr />
             </div>
-          </div> */}
+          </div>  */}
         </div>
     </div>
     </div>

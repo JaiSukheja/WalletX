@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../CSS/Dashboard.css";
 import "../CSS/Income.css";
 import Sidebar from './Sidebar'
 import ProfileContext from "../context/ContextFiles/ProfileContext";
 import TransactionContext from "../context/ContextFiles/TransactionContext";
+import ChartContext from "../context/ContextFiles/ChartContext";
+import { Chart } from "chart.js";
+import IncomeChart from "./IncomeChart";
 
 const Income = () => {
+  const chartProps = useContext(ChartContext)
   const profileProps = useContext(ProfileContext)
   const transactionProps = useContext(TransactionContext)
   const addIncome = async(e) => {
@@ -38,13 +42,57 @@ const Income = () => {
     transactionProps.fetchTransactions()
 
   }
+  // const activityGraph = () => {
+  //   // console.log('chala')
+  //   new Chart('activityGraphChart', {
+      
+  //       labels: Object.keys(chartProps.incomeChart),
+  //       datasets: [
+  //         {
+  //           label: "Income",
+  //           data: Object.values(chartProps.incomeChart),
+  //           backgroundColor: [
+  //             "rgba(255, 99, 132, 0.2)",
+  //           ],
+  //           borderColor: [
+  //             "rgba(255, 99, 132, 1)",
+  //           ],
+  //           borderWidth: 1,
+  //         },
+  //       ],
+      
+  //   })
+  // }
+  // useEffect(()=> {
+  //   console.log(Object.keys(chartProps.incomeChart))
+  //   console.log(Object.values(chartProps.incomeChart))
+    
+  //   new Chart('activityGraphChart', {
+      
+  //     labels: Object.keys(chartProps.incomeChart),
+  //     datasets: [
+  //       {
+  //         label: "Income",
+  //         data: Object.values(chartProps.incomeChart),
+  //         backgroundColor: [
+  //           "rgba(255, 99, 132, 0.2)",
+  //         ],
+  //         borderColor: [
+  //           "rgba(255, 99, 132, 1)",
+  //         ],
+  //         borderWidth: 1,
+  //       },
+  //     ],
+    
+  // })
+  // },[chartProps.incomeChart])
   return (
     <>
     <div className="main" style={{display:"flex", width:"95%",height:"90%",position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",gap:"10px"}}>
     <Sidebar/>
     <div className="income">
       <div class="content">
-        <h1>Income</h1>
+        <h2>Income</h2>
       </div>
       <div class="income-tracker">
         <div class="left">
@@ -60,9 +108,9 @@ const Income = () => {
           </div>
           <div class="left-bottom">
             <div class="add">
-              <h2>Add Income</h2>
-              <form id="income-form" action="">
-                <div class="form-control">
+              <h3>Add Income</h3>
+              
+                
                   <input
                     type="text"
                     id="incomeDescription"
@@ -74,24 +122,24 @@ const Income = () => {
                     id="incomeAmount"
                     placeholder="Income amount"
                   />
-                </div>
                 <div class="form-control">
-                  <button type="submit" onClick={addIncome}>Add Income</button>
+                  <button class="incomeSubmit" type="submit" onClick={addIncome}>Add Income</button>
                 </div>
-              </form>
+              
             </div>
           </div>
         </div>
         <div class="right">
-          {/* <div class="right-top">
+          <div class="right-top">
               <div class="activityGraph">
                   <h2>Activity Graph</h2>
                   <div>
-                      <canvas id="activityGraphChart"></canvas>
+                      {/* <canvas id="activityGraphChart"></canvas> */}
+                      <IncomeChart/>
                   </div>
               </div>
           </div>
-          <div class="right-bottom">
+          {/* <div class="right-bottom">
               <div class="pieChart">
                   <h2>Monthly In Out</h2>
                   <canvas

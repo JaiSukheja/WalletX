@@ -78,6 +78,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-content: space-around;
   }
   .add h2 {
     font-size: 1.4rem;
@@ -117,4 +118,17 @@
   }
   #pieChartGraph {
     margin-top: 0px;
+  }
+  #expenseDescription {
+    height:30px
+  }
+  #expenseAmount {
+    height:30px
+  }
+  .expenseSubmit {
+    width: 110px !important;
+    font-size: 14px !important;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
   }

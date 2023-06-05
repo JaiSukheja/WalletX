@@ -17,6 +17,7 @@ import LoginState from './context/StateFiles/LoginState'
 import './CSS/App.css'
 import ProfileState from "./context/StateFiles/ProfileState";
 import TransactionState from "./context/StateFiles/TransactionState";
+import ChartState from "./context/StateFiles/ChartState";
 function App() {
 
 
@@ -30,32 +31,35 @@ function App() {
 
           <AlertState>
             <TransactionState>
-              <BrowserRouter>
+              <ChartState>
+                <BrowserRouter>
 
-                <Routes>
-                  <Route exact path="/" element={<Login />}>
+                  <Routes>
+                    <Route exact path="/" element={<Login />}>
 
-                  </Route>
-                  <Route exact path="/signup" element={<Signup />}>
+                    </Route>
+                    <Route exact path="/signup" element={<Signup />}>
 
-                  </Route>
-                  <Route exact path="/login" element={<Login />}>
+                    </Route>
+                    <Route exact path="/login" element={<Login />}>
 
-                  </Route>
-                  <Route exact path="/dashboard" element={<Dashboard />}>
+                    </Route>
+                    <Route exact path="/dashboard" element={<Dashboard />}>
 
-                  </Route>
-                  <Route exact path="/expense" element={<Expence />}>
-                  </Route>
-                  <Route exact path="/income" element={<Income />}>
-                  </Route>
-                  <Route exact path="/transaction" element={<Transaction />}>
-                  </Route>
+                    </Route>
+                    <Route exact path="/expense" element={<Expence />}>
+                    </Route>
+                    <Route exact path="/income" element={<Income />}>
+                    </Route>
+                    <Route exact path="/transaction" element={<Transaction />}>
+                    </Route>
 
-                </Routes>
+                  </Routes>
 
 
-              </BrowserRouter>
+                </BrowserRouter>
+              </ChartState>
+
             </TransactionState>
 
           </AlertState>
