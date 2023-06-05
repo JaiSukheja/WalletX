@@ -1,13 +1,14 @@
 .signupBox {
-    width: 25%;
-    height: 70vh;
+    width: 380px;
+    max-width:90%;
+    height: 84vh;
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     /* background-color: white; */
-    border-radius: 10px;
-    
+    border-radius: 20px;
+    padding: 20px;
     
     background: #dee2e6;
    
@@ -25,6 +26,8 @@
     transition: background-image 1s, background-size 1s;
     text-align: center;
     text-decoration: none;
+    width: 50%;
+    align-self: center;
 }
 .signupBtn:hover {
     
@@ -56,3 +59,10 @@
     align-items: center;
     gap: 9px;
 }
+.signupBtnCont{
+    margin: 25px;
+}
+/* label{
+    text-align: left;
+    justify-content: center;
+} */

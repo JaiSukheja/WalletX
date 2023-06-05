@@ -1,28 +1,47 @@
 .loginBox {
-    width: 25%;
-    height: 70vh;
+    width: 380px;
+    max-width: 90%;
+    height: 76vh;
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    /* background-color: white; */
-    border-radius: 10px;
-    /* margin-top: 105px; */
-   
-background: #dee2e6;
+    border-radius: 20px;
+    padding: 20px;
+    background: #dee2e6;
 
 }
-
+.main-head{
+    display: flex;
+    align-self: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: #343540;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container h2{
+    text-align: center;
+    font-size: 2rem;
+}
+.signinBtn{
+    width: 50%;
+    align-self: center;
+    border-radius: 15px;
+}
 .signupBtn:hover {
     color: white;
 }
 
-.error{
+.error {
     color: red;
     font-size: 12px;
 }
+
 .passwordContainer {
-    
+
     display: flex;
     align-items: center;
     gap: 10px;

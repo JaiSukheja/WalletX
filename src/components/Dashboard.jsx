@@ -7,7 +7,7 @@ const Dashboard = () => {
   const transactionProps = useContext(TransactionContext)
   return (
     <>
-    <div className="main" style={{display:"flex", width:"95%",height:"90%",position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",gap:"10px"}}>
+    <div className="main">
     <Sidebar/>
     <div className='dashboard'>
         <div className="content">
@@ -28,10 +28,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="charts">
-           <div className="leftCharts">
+          <div className="leftCharts">
             <div className="activityGraph">
               <h2>Activity Graph</h2>
-              <div style={{width:"400px"}}>
+              <div className='activity'>
                 <ActivityGraph/>
               </div>
             </div>

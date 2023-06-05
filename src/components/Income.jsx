@@ -88,7 +88,7 @@ const Income = () => {
   // },[chartProps.incomeChart])
   return (
     <>
-    <div className="main" style={{display:"flex", width:"95%",height:"90%",position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",gap:"10px"}}>
+    <div className="main" >
     <Sidebar/>
     <div className="income">
       <div class="content">
